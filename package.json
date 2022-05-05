@@ -4,6 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "postdeploy": "npx prisma migrate deploy",
+    "start": "node build/server.js",
+    "build": "tsc",
     "dev": "ts-node-dev --respawn --exit-child src/server.ts --ignore-watch node_modules --transpile-only"
   },
   "devDependencies": {
@@ -17,6 +20,7 @@
   "dependencies": {
     "@prisma/client": "3.13.0",
     "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.0",
     "express": "^4.18.1",
     "jsonwebtoken": "^8.5.1"
   }
